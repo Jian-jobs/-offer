@@ -20,6 +20,8 @@ B站：
 1. 花花酱
 https://space.bilibili.com/9880352?fr...
 2. 小Q刷题
-https://space.bilibili.com/149758?fro...
+https://space.bilibili.com/149758?fro...<br>
 3.绵羊教授
-https://space.bilibili.com/354892788?...
+https://space.bilibili.com/354892788?...<br>
+系统学习python3可以看<strong>廖雪峰老师的教程</strong>：</li></ol><p>教程地址：
+  href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000"
