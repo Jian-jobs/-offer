@@ -35,31 +35,33 @@ https://space.bilibili.com/9880352?fr...
 https://space.bilibili.com/149758?fro...<br>
 3.绵羊教授
 https://space.bilibili.com/354892788?...<br>
-系统学习python3可以看<strong>廖雪峰老师的教程</strong>：</li></ol><p>教程地址：
+系统学习python3可以看<strong>
+  廖雪峰老师的教程</strong>：</li></ol><p>
+  教程地址：
   href="https://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000"
   
   
   # EE找CS工作
 
-EE专业，上了数据结构与算法，网络编程（偏前端）
-选课：数据结构，算法，database，OS
-实习：计算机公司相关，第二专业，做相关项目（比赛）
+EE专业，上了数据结构与算法，网络编程（偏前端）<br>
+选课：数据结构，算法，database，OS<br>
+实习：计算机公司相关，第二专业，做相关项目（比赛）<br>
 
-后端偏软件：C++, C, Java
-前端偏软件： JavaScript， html，React
-硬件：vhdl。。。
+后端偏软件：C++, C, Java<br>
+前端偏软件： JavaScript， html，React<br>
+硬件：vhdl。。。<br>
 
 关于cs就业方向：
-大数据，数据挖掘，云计算，AI
-算法：industry很少，大部分博后，当助教
-但是data science， data mining， AI博士好找工作
+大数据，数据挖掘，云计算，AI<br>
+算法：industry很少，大部分博后，当助教<br>
+但是data science， data mining， AI博士好找工作<br>
 
 现在可以做的：
-感兴趣的工作先做点小的project，或者找些实习
-多利用网络学习，自己多练习。和同学多交流，
+感兴趣的工作先做点小的project，或者找些实习<br>
+多利用网络学习，自己多练习。和同学多交流，<br>
 
 工作的种类：
-程序员，数据分析师，项目经理，项目助理，产品交互设计师，hr
+程序员，数据分析师，项目经理，项目助理，产品交互设计师，hr<br>
 
-Industry Engineering: 
+Industry Engineering: <br>
 Operation engineering（运筹学）
