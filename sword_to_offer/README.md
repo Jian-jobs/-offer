@@ -1,4 +1,7 @@
-粗分根据： ![剑指Offer系列刷题笔记汇总](https://cuijiahua.com/blog/2018/02/basis_67.html) <br>
+Reference: 🐷 [剑指Offer》面试题Python实现](https://github.com/JushuangQiao/Python-Offer) <br>
+
+粗分根据： 👏 [剑指Offer系列刷题笔记汇总](https://cuijiahua.com/blog/2018/02/basis_67.html) <br>
+
 ### 数组(11道)：
 
 剑指Offer（一）：二维数组中的查找
