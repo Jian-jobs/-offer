@@ -21,6 +21,8 @@ leetcode
 5. 可以选择用笔记本 ipad学习（Goodnotes）
 6. 利用网上资源 搜索题解视频（微信公众号labuladong
 
+**算法对面试很重要，很多人也很关心。我这里推荐几本有益于面试的书籍，分别是：《剑指 offer》《编程珠玑》《编程之美》。**
+
 刷题目录
 https://github.com/CyC2018/CS-Notes/blob/master/notes/Leetcode%20%E9%A2%98%E8%A7%A3%20-%20%E7%9B%AE%E5%BD%95.md
 
