@@ -83,3 +83,200 @@
 然后可以利用bfs去搜索这件事情
 
 要用很多数据结构就换了python,结果还是没时间 = =
+
+
+
+
+
+
+
+---
+
+作者：十柒201911151658203
+链接：https://www.nowcoder.com/discuss/389676?type=1
+来源：牛客网
+
+
+
+### 第一题
+
+> 输入一个整数n 1<n<10^9
+> 输出一个整数
+> 找出其所有非空子集中所有元素个数之和，然后对10^9+7取模，输出结果
+> 例如输入2，有{1}，{2}，{1，2}3个非空子集，所有元素个数之和为4
+> 输出结果为4
+
+#### 思路
+
+用int肯定会超，需要用到BigInteger
+
+对于输入n，求得所有元素之和为n*2^(n-1)
+
+然后再对10^7+7取模即可
+
+### 代码
+
+```c++
+作者：十柒201911151658203
+链接：https://www.nowcoder.com/discuss/389676?type=1
+来源：牛客网
+
+public class Solution1 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String n = sc.next();
+        BigInteger in = BigInteger.valueOf(Long.parseLong(n));
+        BigInteger num = f(in);//种数
+        BigInteger x = BigInteger.valueOf(10).pow(9).add(BigInteger.valueOf(7));
+        System.out.println(num.mod(x));
+    }
+ 
+    private static BigInteger f(BigInteger n) {
+        return n.multiply(BigInteger.valueOf(2).pow(n.intValue()-1));
+    }
+}
+```
+
+### 第二题
+
+> 输入n,m两个整数代表n行m列
+> 下面输入n行字符串，每个字符串都包含m个字符（只含有'.','#','E','S'）
+> 其中S代表起点，E代表终点，#代表无法通过
+> 从起点出发，可向左，向右，向上，向下移动一步
+> 也可按如下中心对称移动，也只算移动一步
+> X（i,j）→  X‘（n+1-i,m+1-j）
+> 求从起点到终点最少需要移动几步
+
+示例输入
+
+```
+4 4
+#S..
+E#..
+#...
+....
+```
+
+输出
+
+```
+4
+```
+
+说明
+先中心对称到达（4，3），然后向上一步，向右一步，中心对称到达终点
+
+
+
+
+
+作者：红枫归尘
+链接：https://www.nowcoder.com/discuss/390915?type=1
+来源：牛客网
+
+
+
+1、从n个人中选择任意数量的人员组成一支队伍，然后从一支队伍中选出一位队长，不同的队长算不同的组合，问这样的组合的数量对10^9+7取模 。 
+
+
+
+```python
+作者：红枫归尘
+链接：https://www.nowcoder.com/discuss/390915?type=1
+来源：牛客网
+
+def quick_power_mod(x, n, mod):
+    res = 1
+    while n:
+        if n & 1:
+            res = res * x % mod
+        n = n >> 1
+        x = (x ** 2) % mod
+    return res
+ 
+n = 2
+mod = 10 ** 9 + 7
+mod1 = quick_power_mod(2, n-1, mod)
+mod2 = n % mod
+result = (mod1 * mod2) % mod
+ 
+print(result)
+```
+
+快速幂算法，递推公式为S=n*(2^n-1)
+
+  笔试时递推公式没进一步优化，先去做第二题了，导致时间不太够，递推公式没推好的话会超时。 
+
+```python
+作者：红枫归尘
+链接：https://www.nowcoder.com/discuss/390915?type=1
+来源：牛客网
+
+def dfs(pos_x, pos_y, road, fly_time, time, min_time):
+    if time >= min_time:
+        return min_time
+    if sum([road[i][j] == 0 for i in range(n) for j in range(m)]) == 0:
+        return min_time
+ 
+    # down
+    if (0 <= pos_x + 1 < n) and road[pos_x+1][pos_y] != 1:
+        if road[pos_x+1][pos_y] == 2:
+            return time+1
+        else:
+            road[pos_x+1][pos_y] = 1
+        min_time = min(dfs(pos_x+1, pos_y, road, fly_time, time+1, min_time), min_time)
+        road[pos_x+1][pos_y] = 0
+    # up
+    if (0 <= pos_x - 1 < n) and road[pos_x-1][pos_y] != 1:
+        # print('up')
+        if road[pos_x-1][pos_y] == 2:
+            return time+1
+        else:
+            road[pos_x-1][pos_y] = 1
+        min_time = min(dfs(pos_x-1, pos_y, road, fly_time, time+1, min_time), min_time)
+        road[pos_x-1][pos_y] = 0
+    # left
+    if (0 <= pos_y - 1 < m) and road[pos_x][pos_y-1] != 1:
+        road[pos_x][pos_y-1] = 1
+        min_time = min(dfs(pos_x, pos_y-1, road, fly_time, time+1, min_time), min_time)
+        road[pos_x][pos_y-1] = 0
+    # right
+    if (0 <= pos_y + 1 < m) and road[pos_x][pos_y+1] != 1:
+        # print('right')
+        if road[pos_x][pos_y+1] == 2:
+            return time+1
+        else:
+            road[pos_x][pos_y+1] = 1
+        min_time = min(dfs(pos_x, pos_y+1, road, fly_time, time+1, min_time), min_time)
+        road[pos_x][pos_y+1] = 0
+    # fly machine
+    if (0 <= n - 1 - pos_x < n) and (0 <= m - 1 - pos_y < m) and road[n-1-pos_x][m-1-pos_y] != 1 and fly_time > 0:
+        # print('fly')
+        if road[n-1-pos_x][m-1-pos_y] == 2:
+            return time+1
+        else:
+            road[n-1-pos_x][m-1-pos_y] = 1
+        min_time = min(dfs(n-1-pos_x, m-1-pos_y, road, fly_time-1, time+1, min_time), min_time)
+        road[n-1-pos_x][m-1-pos_y] = 0
+ 
+    return min_time
+ 
+ 
+n, m = [4, 4]
+road = [[1, 1, 0, 0], [2, 1, 0, 0], [1, 0, 0, 0], [0, 0, 0, 0]]
+born_x = 0
+born_y = 1
+fly_time = 5
+min_time = 1000000000000000000000
+time = dfs(born_x, born_y, road, fly_time, 0, min_time)
+if time == 1000000000000000000000:
+    time = -1
+print(time)
+```
+
+用了dp来做，笔试时也没做出来orz 后来发现问题在于每一次搜索的时候设置了步进的点为1，导致初始设定2为终点的判定始终未找到，以及时间不太够，摔
+
+  用惯了台式机再用笔记本写感觉屏幕和键盘用着好难受😂 
+
+  难受，希望面试时能顺利些，预祝大家都能有好结果♥
+
